@@ -14,7 +14,9 @@ class MessengerService
       }
     }
 
-    HTTParty.post(URL, { body: message, headers: { 'Content-Type': 'application/json' } })
+    req = HTTParty.post(URL, { body: message, headers: { 'Content-Type': 'application/json' } })
+    pp req
+    req
   end
 
 end

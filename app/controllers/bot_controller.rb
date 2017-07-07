@@ -5,9 +5,9 @@ class BotController < ApplicationController
     head :ok
 
     messenger = MessengerService.new
-    post = messenger.send_message(@sender, @text)
-
-    pp JSON.parse post
+    chatbase = ChatbaseService.new
+    body_send_msg = messenger.send_message(@sender, @text)
+    chatbase.send_analytics({ recipient: @recipient, message: { text: @text } }, { recipient_id: @recipient, message_id: JSON.parse(body_send_msg.parsed_response)["message_id"] })
   end
 
   private
