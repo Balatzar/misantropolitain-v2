@@ -16,6 +16,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'jbuilder', '~> 2.5'
 gem 'figaro', '~> 1.1.1'
 gem 'httparty', '~> 0.15.5'
+gem 'textacular', '~> 5.0.1'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
